@@ -42,17 +42,20 @@ let frases = () => {
 
 frases();
 
-
+const date = today.getDay() -1;
+const weekday = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+const currentWeekDay = weekday[date];
+const day = today.getDate();
 const months = ["Enero", "Febero", "Marzo", "Abril", "Mayo", "Junio",
 "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 const month = today.getMonth();
 const currentMonth = months[month];
 const year = today.getFullYear();
-const day = today.getDate();
+
 
 
 const fecha = document.querySelector('.fecha')
-fecha.innerText = `Hoy es ${day} de ${currentMonth} de ${year}`;
+fecha.innerText = `Hoy es ${currentWeekDay} ${day} de ${currentMonth} de ${year}`;
 
 
 
