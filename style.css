@@ -1,0 +1,170 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: #93bfb7;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+nav {
+    background-color:#387373;
+    width: 230px;
+    height: 1020px;
+    border-radius: 30px;
+    margin-left: 30px;
+    font-family: 'Roboto';
+    
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    margin-left: -45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    margin-top: 90px;
+
+
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    height: 67px;
+    border: 1px solid #93bfb7;
+    border-radius: 30px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #93bfb7;
+    font-weight: 300;
+    font-size: 1.8rem;
+    padding: 30px 30px 30px 25px;
+}
+
+/*CLOCK*/
+.clockBox {
+    width: 495px;
+    height: 730px;
+    background-color: #e4f2e79d;
+    border-radius: 30px;
+
+}
+.clock {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 7rem;
+    color: #387373;
+    height: 120px;
+}
+
+.frase {
+    font-family: 'Roboto Serif';
+    font-size: 2.5rem;
+    font-style: italic;
+}
+
+/*PASSWORD*/
+.PswBoxMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+    border: 1px solid red;
+}
+
+.passwordBox {
+    background-color: #e4f2e7;
+    column-gap: 20px;
+    border-radius: 40px;
+    display: flex;
+    padding: 40px;
+    width: 65%;
+    box-shadow: 4px 4px 40px #38737331;
+}
+
+.showPassword {
+    width: 85%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #93bfb742 ;
+    
+}
+
+button {
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: #387373;
+    font-size: 1.4rem;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #387373;
+
+}
+
+.crear {
+    font-size: 1rem;
+}
+
+.number {
+    width: 200px;
+    height: 38px;
+    border-radius: 20px;
+    border: 1px solid #387373;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Roboto Serif';
+    
+}
+
+.number:hover {
+    font-family: 'Roboto Serif';
+    border: none;
+}
+
+button:hover {
+    font-family: 'Roboto Serif';
+    font-style: italic;
+    font-size: 1.3rem;
+    background-color: #387373;
+    border: 1px solid #387373;
+    color: white;
+}
+
+.crear:hover {
+    font-size: 0.9rem;
+}
+
+button:active {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+}
+/*ESTILOS PARTICULARES*/
+
+li:hover {
+    background-color: #93bfb7;
+    color: #387373;
+    
+}
+
+a:hover {
+    font-family: 'Roboto Serif';
+    font-style: italic;
+    color: #387373;
+}
+
