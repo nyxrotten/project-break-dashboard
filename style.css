@@ -2,169 +2,405 @@
     margin: 0px;
 }
 
+:root {
+    --paleBlue-color: #e6f7f2;
+    --darkBlueGreen-color: #2d3e40;
+    --palePistaccio-color: #C0CA7F;
+    --softOrange-color: #EB8D25;
+    --seaBlue-color: #6EAEAE;
+    --darkSeaBlue-color: #5B9090;
+    --darkSeaBlueShadow-color: #5b909060;
+}
+
+.boldTitle {
+    font-style: italic;
+}
+
 body {
-    background-color: #93bfb7;
+    background-color: var(--paleBlue-color);
+    font-family: 'Roboto';
 }
 
 main {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    margin-top: 30px;
+    
 }
 nav {
-    background-color:#387373;
-    width: 230px;
-    height: 1020px;
-    border-radius: 30px;
-    margin-left: 30px;
-    font-family: 'Roboto';
-    
+    width: 100%;
+    display: flex;
 }
 
 ul {
     list-style: none;
-    text-align: center;
-    margin-left: -45px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 30px;
-    margin-top: 90px;
-
-
-}
-
-li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 180px;
-    height: 67px;
-    border: 1px solid #93bfb7;
-    border-radius: 30px;
-    
 }
 
 a {
     text-decoration: none;
-    color: #93bfb7;
-    font-weight: 300;
-    font-size: 1.8rem;
-    padding: 30px 30px 30px 25px;
 }
 
-/*CLOCK*/
-.clockBox {
-    width: 495px;
-    height: 730px;
-    background-color: #e4f2e79d;
-    border-radius: 30px;
 
-}
-.clock {
-    font-family: 'Roboto';
-    font-weight: 600;
-    font-size: 7rem;
-    color: #387373;
-    height: 120px;
-}
+@media (min-width: 350px) {
+ /*//////////////////// LINKS  ///////////////*/
+/*///////////////////////////////////////////*/
 
-.frase {
-    font-family: 'Roboto Serif';
-    font-size: 2.5rem;
-    font-style: italic;
-}
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    main {
+        flex-direction: column;
+        justify-content: center;
+        width: 350px;
+        
+    }
 
-/*PASSWORD*/
-.PswBoxMain {
-    width: 100%;
+    .navDesktop {
+        display: none;
+    }
+
+    .navMobile {
+        padding: 0px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        column-gap: 5px;
+        width: 100%;
+    }
+
+
+    .navMobile li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 56px;
+        height: 23px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid var(--darkSeaBlue-color);
+        background-color: var(--paleBlue-color);
+        box-shadow: 0px 0px 20px var(--darkSeaBlueShadow-color);
+        opacity: 70%;
+        padding: 0px;
+    }
+
+    .navMobile a {
+        color: var(--darkSeaBlue-color)
+    }
+
+    .navMobile li:active {
+        background-color: var(--softOrange-color);
+    }
+
+    .navMobile a:hover {
+        color: var(--paleBlue-color)
+    }
+
+    .linksBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        border: 1px solid red;
+    }
+
+    .linksBackground {
+        width: 308px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linksList {
+        width: 308px;
+        background-color: white;
+        border-radius: 10px;
+        font-family: 'Roboto Serif';
+        display: flex;
+        flex-direction: column;
+    }
+
+    .elementosLista {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+
+    .listaUL{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 30px;
+        font-style: italic;
+
+    }
+
+    #tituloUrl {
+        font-weight: 600;
+    }
+
+    #url {
+        width: 200px;
+    }
+
+    .listaUlCheckbox {
+        position: relative;
+        left: 220px;
+        bottom: 25px;
+    }
+
+    #listCheckbox {
+        border: 1px solid red;
+    }
+
+    .linksInput {
+        display: flex;
+        flex-direction: column;
+        width: 270px;
+        margin-top: 20px;
+        padding: 18px;
+        border-radius: 8px;
+        border: 1px solid var(--darkSeaBlue-color)
+    }
+
+    .linksInput label {
+        font-family: 'Roboto Slab';
+        font-weight: 500;
+        color: var(--darkSeaBlue-color)
+    }
+
+    .linksInput input {
+        border-radius: 5px;
+        border: 1px solid var(--darkSeaBlue-color);
+        height: 25px;
+        font-family: 'Roboto Serif';
+        font-style: italic;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    .linksInputButtons {
+        margin-top: 10px;
+    }
+
+    .linksInputButtons button {
+        width: 100%;
+        font-family: 'Roboto';
+        font-size: 1rem;
+        border-radius: 5px;
+        padding: 5px 0px;
+        border: 1px solid var(--paleBlue-color)
+    }
+
+    .linksInputButtons button:first-child {
+        background-color: var(--darkSeaBlue-color);
+        margin-bottom: 5px;
+        color:white;
+    }
+
+    .linksInputButtons button:last-child {
+        background-color: var(--paleBlue-color);
+        border: 1px solid var(--darkSeaBlue-color);
+        color: var(--darkSeaBlue-color)
+    }
+
+    .linksInputButtons button:first-child:hover {
+        background-color: var(--softOrange-color);
+        box-shadow: 2px 0px 10px var(--darkSeaBlueShadow-color);
+        font-family: 'Roboto Serif';
+        font-size: 1rem;
+        font-style: italic;
+        border: 1px solid var(--softOrange-color);
+    }
+
+    .linksInputButtons button:last-child:hover {
+        background-color: var(--softOrange-color);
+        box-shadow: 2px 0px 10px var(--darkSeaBlueShadow-color);
+        font-family: 'Roboto Serif';
+        font-size: 1rem;
+        font-style: italic;
+        border: 1px solid var(--softOrange-color);
+        color: white;
+    }
+
+    /*//////////////////// WEATHER  ///////////////*/
+/*///////////////////////////////////////////*/
+
+.weatherBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    row-gap: 40px;
-    border: 1px solid red;
+    padding-top: 20px;
+    
+    height: 500px;
 }
 
-.passwordBox {
-    background-color: #e4f2e7;
-    column-gap: 20px;
-    border-radius: 40px;
+.weatherBackground {
+    width: 308px;
     display: flex;
-    padding: 40px;
-    width: 65%;
-    box-shadow: 4px 4px 40px #38737331;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px 0px;
 }
 
-.showPassword {
-    width: 85%;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #93bfb742 ;
-    
-}
-
-button {
-    font-family: 'Roboto';
-    font-weight: 300;
-    color: #387373;
-    font-size: 1.4rem;
-    width: 200px;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid #387373;
-
-}
-
-.crear {
-    font-size: 1rem;
-}
-
-.number {
-    width: 200px;
-    height: 38px;
-    border-radius: 20px;
-    border: 1px solid #387373;
-    text-align: center;
-    font-size: 1.2rem;
-    font-family: 'Roboto Serif';
-    
-}
-
-.number:hover {
-    font-family: 'Roboto Serif';
-    border: none;
-}
-
-button:hover {
-    font-family: 'Roboto Serif';
-    font-style: italic;
-    font-size: 1.3rem;
-    background-color: #387373;
-    border: 1px solid #387373;
-    color: white;
-}
-
-.crear:hover {
-    font-size: 0.9rem;
-}
-
-button:active {
+.weatherGeneral {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 600;
-}
-/*ESTILOS PARTICULARES*/
 
-li:hover {
-    background-color: #93bfb7;
-    color: #387373;
+}
+.weatherGeneral img {
+    width: 80%;
+}
+
+.weatherDetails {
+    width: 200px;
+
+}
+
+#weatherLocation {
+    width: 50px;
+    height: 30px;
+}
+
+#wheatherTemperature {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    column-gap: 10px;
+}
+#weatherDetailInfo {
+    display: flex;
+    column-gap: 5px;
+    font-size: 0.7rem;
+    font-family: 'Roboto Slab';
+}
+
+#windInfo, #cloudInfo, #humUvInfo {
+    border: 1px solid var(--seaBlue-color);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 5px;
     
 }
+.elementosLista {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 
-a:hover {
-    font-family: 'Roboto Serif';
-    font-style: italic;
-    color: #387373;
 }
 
+
+}
+
+
+@media (min-width: 760px) {
+    body {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    main {
+        width: 760px;
+        flex-direction: row;
+    }
+
+    nav {
+        width: 200px;
+    }
+
+    .navMobile {
+        display: none;
+        }
+
+    .navDesktop {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        }
+    
+        .navDesktop:first-child {
+            margin-top: 50px;
+        }
+
+        .navDesktop li {
+            display: flex;
+            justify-content: center;
+            align-items: center;            width: 135px;
+            height: 43px;
+            border: 1px solid var(--darkSeaBlue-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            box-shadow: 0px 0px 20px var(--darkSeaBlueShadow-color);
+        }
+
+        .navDesktop li:hover {
+            background-color: var(--softOrange-color);
+            border: 1px solid var(--softOrange-color);
+        }
+
+        .navDesktop a {
+            color: var(--darkSeaBlue-color);
+            padding: 10px 40px;
+        }
+
+        .navDesktop a:hover {
+            color: white;
+            font-family: 'Roboto Serif';
+            font-style: italic;
+        }
+    
+        .navDesktop a:active {
+            color: white;
+            font-family: 'Roboto Slab';
+            font-style: bold;
+        }
+
+        .linksBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            width: 500px;
+
+        }
+
+        .linksBackground {
+            width: 508px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .linksList {
+            width: 508px;
+            height: 700px;
+            background-color: white;
+            border-radius: 10px;
+            font-family: 'Roboto Serif';
+            display: flex;
+            flex-direction: column;
+        }
+        .elementosLista {
+            height: 800px;
+        }
+        .linksInput {}
+
+
+    }
+
+@media (min-width: 1024px) {
+    
+
+    
+}
