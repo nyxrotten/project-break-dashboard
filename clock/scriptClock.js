@@ -12,12 +12,20 @@ const getTime = () => {
 
     let time = `${hours}:${minutes}:${seconds}`;
 
-    const clock = document.querySelector('.clock').innerText = time;
+    clock.innerText = time;
+    
+    //console.log(setInterval(getTime, 1000))
+    //console.log(setTimeout(getTime, 1000))
 
-    setTimeout(getTime, 1000);
-
+    console.log(time)
 }
+
+
 getTime()
+
+
+
+
 
 const noche = "Es hora de descansar. Apaga y sigue mañana";
 const buenosDias = "Buenos días, desayuna fuerte y a darle al código";
@@ -26,9 +34,9 @@ const comida = "Espero que hayas comido";
 const tardePronto = "Buenas tardes, el último empujón";
 const tardeTarde = "Estyo ya son horas extras... Piensa en parar pronto";
 const buenasNoches = "Buenas noches, es hora de pensar en parar y descansar";
-let frase = document.querySelector('.frase')
+const frase = document.querySelector('.frase');
 
-let frases = () => {
+const frases = () => {
     (clock.innerText > "00:00:00" && clock.innerText < "06:59:59") ? frase.innerText = noche : "Error";
     (clock.innerText > "07:00:00" && clock.innerText < "11:59:59") ? frase.innerText = buenosDias : "Error";
     (clock.innerText > "12:00:00" && clock.innerText < "13:59:59") ? frase.innerText = medioDia : "Error";
@@ -37,7 +45,8 @@ let frases = () => {
     (clock.innerText > "18:00:00" && clock.innerText < "21:59:59") ? frase.innerText = tardeTarde : "Error";
     (clock.innerText > "22:00:00" && clock.innerText < "23:59:59") ? frase.innerText = buenasNoches : "Error";
 
-    setTimeout(frases, 1000)
+    setInterval(frases, 1000)
+    
 }
 
 frases();

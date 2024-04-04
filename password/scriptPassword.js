@@ -1,7 +1,7 @@
 const showPassword = document.querySelector('.showPassword');
 const copiar = document.querySelector('.copiar');
 const crear = document.querySelector('.crear');
-const number = document.querySelector('.number').value
+const number = document.querySelector('.number')
 
 const minus = "abcdefghijklmnopqrstuvwxyz";
 const mayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -9,25 +9,29 @@ const num = "0123456789";
 const symb = "!@#$%^&*()-_=+";
 
 
-const numberValue = Number(number);
-console.log(numberValue)
+
+
 
 
 //SET INPUT NUMBER
 
 crear.addEventListener('click', () => {
-    console.log(numberValue)
+    event.preventDefault()
+    showPassword.innerText = crearPassword();
+    console.log( typeof Number(number.value))
+    
 })
 
 
 //CREAR CONTRASEÑA RANDOM
 
-let crearPassword = () => {
+const crearPassword = () => {
+    const numberValue = Number(number.value)
     let password = '';
-    let caracterPassword = minus + mayus + num + symb;
+    const caracterPassword = minus + mayus + num + symb;
  
     for (let i = 1; i <= numberValue; i++) {
-        let indicePassword = Math.floor(Math.random()
+        const indicePassword = Math.floor(Math.random()
             * caracterPassword.length);
  
         password += caracterPassword.charAt(indicePassword)
@@ -38,7 +42,7 @@ let crearPassword = () => {
 
 crearPassword();
 
-showPassword.innerText = crearPassword();
+
 
 
 

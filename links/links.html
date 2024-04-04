@@ -43,15 +43,16 @@
                             </li> -->
                         </ul>
                     </div>
-                <div class="linksInput">
+                <form class="linksInput">
                     <label for="titleText">Título</label>
                     <input type="text" class="titleText" placeholder="Aquí el título" required></input>
                     <label for="urlText">URL</label>
-                    <input type="text" class="urlText" placeholder="Aquí en enlace" required></input>
+                    <input type="url" name="urlText" class="urlText" placeholder="Aquí en enlace" pattern="https://.*" required></input>
                     <div class="linksInputButtons">
-                        <button class="guardar">Guardar</button>
-                        <button class="delete">Borrar</button>
+                        <input type="submit" class="guardar" value="Guardar"></input>
+                        <input type="submit" class="delete" value="Borrar"></input>
                     </div>
+                </form>
                 </div>
             </div>
         </div>

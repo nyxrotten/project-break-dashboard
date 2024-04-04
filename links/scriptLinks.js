@@ -13,7 +13,7 @@ add.addEventListener('click', () => {
                     <li>
                     <div class="listaUlTexto">
                         <p id="tituloUrl">${titleText}</p>
-                        <p id="url">${urlText}</p>
+                        <a id="url" href="${urlText}">${urlText}<a>
                     </div>
                     <div class="listaUlCheckbox">
                         <input id="listCheckbox" type="checkbox" class="checkbox">
@@ -27,11 +27,10 @@ add.addEventListener('click', () => {
 })
 
 
-checkbox.addEventListener('click', function() {
+/*checkbox.addEventListener('click', function() {
     if (checkbox.checked) {
         checkbox.remove();
     } else { alert("unchecked")}
 } )
+*/
 
-
-console.log(checkbox)
