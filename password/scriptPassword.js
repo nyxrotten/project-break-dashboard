@@ -10,23 +10,19 @@ const symb = "!@#$%^&*()-_=+";
 
 
 
-
-
-
-//SET INPUT NUMBER
+//BOTÓN CREAR CONTRASEÑA
 
 crear.addEventListener('click', () => {
-    event.preventDefault()
     showPassword.innerText = crearPassword();
-    console.log( typeof Number(number.value))
+    console.log(showPassword.innerText)
     
 })
 
 
-//CREAR CONTRASEÑA RANDOM
+//FUNCIÓN CREAR CONTRASEÑA RANDOM
 
 const crearPassword = () => {
-    const numberValue = Number(number.value)
+    const numberValue = Number(number.value);
     let password = '';
     const caracterPassword = minus + mayus + num + symb;
  
@@ -42,8 +38,7 @@ const crearPassword = () => {
 
 crearPassword();
 
-
-
+//BOTÓN COPIARA CONTRASEÑA
 
 
 

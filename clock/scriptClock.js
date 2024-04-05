@@ -13,15 +13,10 @@ const getTime = () => {
     let time = `${hours}:${minutes}:${seconds}`;
 
     clock.innerText = time;
-    
-    //console.log(setInterval(getTime, 1000))
-    //console.log(setTimeout(getTime, 1000))
-
-    console.log(time)
 }
 
-
 getTime()
+
 
 
 
