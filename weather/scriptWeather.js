@@ -1,8 +1,9 @@
 const baseURL = "https://api.weatherapi.com/v1/current.json?key="
-const apiKey = "f4d4919561e748e3b8e94204243003";
+const apiKey = "f4d4919561e748e3b8e94204243003&q=";
 const ciudad = "Zaragoza"
-const endpoint = `${baseURL}${apiKey}&q=${ciudad}`;
-
+const endpoint = baseURL+apiKey+ciudad;
+const forecastBase = "https://api.weatherapi.com/v1/forecast.json?key=";
+const forecastDays = "&days=7&aqi=no&alerts=no";
 
 
 let weatherBoxMain = document.querySelector(".weatherBoxMain")
@@ -14,7 +15,7 @@ const getWeatherNow = async () => {
             throw new Error("Error de API", response.status);
         }
         const data = await response.json();
-        let current = data.current;
+        const current = data.current;
 
         const weatherGeneral = document.querySelector('.weatherGeneral')
         weatherGeneral.innerHTML = `<img id="weatherIcon" src="${current.condition.icon}">
@@ -36,23 +37,6 @@ const getWeatherNow = async () => {
         humUvInfo.innerHTML = `<h4>UV ${current.uv}</h4>
                                 <h4>Humidity ${current.humidity}%</h4>`
 
-     
-     
-       /* weatherBoxMain.innerHTML = `
-            <ul>
-                <li>Temperatura actual: ${current.temp_c}º</li>
-                <li>${current.condition.text}</li>
-                <img src="${current.condition.icon}">
-                <li>Rachas de ${current.wind_kph} Km/h</li>
-                <li>Dirección ${current.wind_dir}</li>
-                <li>Lluvias ${current.precip_mm}</li>
-                <li>Humedad ${current.humidity}%</li>
-                <li>Nubes ${current.cloud}%</li>
-                <li>Sensación ${current.feelslike_c} º</li>
-                <li>Índice UV ${current.uv}</li>
-                </ul>`*/
-        console.log(current)
-
     }
     catch (error) {
     console.log("Error", error);
@@ -64,7 +48,22 @@ getWeatherNow()
 
 const getWeatherThisWeek = async () => {
     try {
-        const response = await fetch (endpoint)
+        const response = await fetch (forecastBase+apiKey+ciudad+forecastDays);
+        if (!response.ok) {
+            throw new Error("Error de API", response.status);
+        } 
+        const data = await response.json();
+        const forecast = data.forecast.forecastday;
+
+        const weatherForecast = document.querySelector('.weatherForecast');
+        forecast.forEach((weekDay) => {
+            const divDom = document.createElement('div');
+            divDom.classList.add("weatherForecastDay");
+            weatherForecast.appendChild(divDom);
+            divDom.innerHTML = `<img src="${weekDay.day.condition.icon}">
+                                <h3>${weekDay.day.maxtemp_c}</h3>
+                                <h4>${weekDay.day.mintemp_c}</h4>`
+        })
     }
     catch (error) {
         console.log('Error', error)
@@ -74,14 +73,3 @@ const getWeatherThisWeek = async () => {
 getWeatherThisWeek()
 
 
-const getTodayEndpoint = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const day = today.getDate()
-    return `${endpoint}&q=${year}-${month}-${day}`
-}
-
-getTodayEndpoint()
-
-console.log(getTodayEndpoint())

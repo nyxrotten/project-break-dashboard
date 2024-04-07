@@ -300,6 +300,10 @@ a {
 
 }
 
+.weatherForecast {
+    display: flex;
+    
+}
 
 }
 

@@ -7,7 +7,6 @@ const urlText = document.querySelector('.urlText')
 
 
 
-
 add.addEventListener('click', () => {
     const titleTextValue = titleText.value
     const urlTextValue = urlText.value
@@ -26,7 +25,28 @@ add.addEventListener('click', () => {
 
     addLinkLocalStorage()
 
-})
+});
+
+const pintarLinksGuardados = () => {
+    const arrayLinksGuardados = localStorage.getItem("Lista Links Guardados");
+    const listaLinksGuardadosParse = JSON.parse(arrayLinksGuardados);
+    listaLinksGuardadosParse.forEach((link) => {
+        const liDOM = document.createElement('li');
+        liDOM.innerHTML = `
+            <li>
+            <div class="listaUlTexto">
+                <p id="tituloUrl">${link.Título}</p>
+                <a id="url" href="${link.URL}">${link.URL}<a>
+            </div>
+            <div class="listaUlCheckbox">
+                <input id="listCheckbox" type="checkbox" class="checkbox">
+            </div>
+            </li>`
+        lista.appendChild(liDOM)
+    })
+}
+
+pintarLinksGuardados()
 
 
 const addLinkLocalStorage = () => {
@@ -53,17 +73,21 @@ const addLinkLocalStorage = () => {
         const listaLinksGuardadosActualizada = JSON.stringify(listaLinksGuardadosParse);
 
         localStorage.setItem('Lista Links Guardados', listaLinksGuardadosActualizada);
-    }    
+    }
     }
 
+    const inputCheckbox = document.querySelector("#listCheckbox");
+
+
+borrar.addEventListener('click', () => {
+
+    lista.innerHTML = "";
+    localStorage.removeItem('Lista Links Guardados')
+    
+})
 
 
 
 
-/*checkbox.addEventListener('click', function() {
-    if (checkbox.checked) {
-        checkbox.remove();
-    } else { alert("unchecked")}
-} )
-*/
+
 

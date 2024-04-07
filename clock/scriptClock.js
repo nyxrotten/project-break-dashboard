@@ -1,6 +1,7 @@
 const clock = document.querySelector('.clock')
 const today = new Date();
 
+
 const getTime = () => {
     let hours = today.getHours()
     let minutes = today.getMinutes()
@@ -10,9 +11,13 @@ const getTime = () => {
     minutes = (minutes < 10) ? '0' + minutes : minutes;
     seconds = (seconds < 10) ? '0' + seconds : seconds;
 
-    let time = `${hours}:${minutes}:${seconds}`;
+    const time = `${hours}:${minutes}:${seconds}`;
 
     clock.innerText = time;
+
+    //setInterval(getTime, 1000)
+
+    
 }
 
 getTime()
@@ -46,8 +51,8 @@ const frases = () => {
 
 frases();
 
-const date = today.getDay() -1;
-const weekday = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+const date = today.getDay();
+const weekday = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 const currentWeekDay = weekday[date];
 const day = today.getDate();
 const months = ["Enero", "Febero", "Marzo", "Abril", "Mayo", "Junio",
@@ -60,6 +65,5 @@ const year = today.getFullYear();
 
 const fecha = document.querySelector('.fecha')
 fecha.innerText = `Hoy es ${currentWeekDay} ${day} de ${currentMonth} de ${year}`;
-
 
 
