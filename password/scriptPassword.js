@@ -40,5 +40,8 @@ crearPassword();
 
 //BOTÓN COPIARA CONTRASEÑA
 
-
-
+copiar.addEventListener("click",()=>{
+    navigator.clipboard.writeText(showPassword.value);
+    alert("Contraseña copiada!");
+    console.log(showPassword.value)
+})

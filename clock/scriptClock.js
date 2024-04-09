@@ -1,8 +1,10 @@
 const clock = document.querySelector('.clock')
-const today = new Date();
+
 
 
 const getTime = () => {
+    const today = new Date();
+    
     let hours = today.getHours()
     let minutes = today.getMinutes()
     let seconds = today.getSeconds()
@@ -15,16 +17,11 @@ const getTime = () => {
 
     clock.innerText = time;
 
-    //setInterval(getTime, 1000)
-
-    
 }
 
+setInterval(getTime, 1000)
+
 getTime()
-
-
-
-
 
 
 const noche = "Es hora de descansar. Apaga y sigue mañana";
@@ -51,6 +48,7 @@ const frases = () => {
 
 frases();
 
+const today = new Date();
 const date = today.getDay();
 const weekday = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 const currentWeekDay = weekday[date];

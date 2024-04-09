@@ -6,10 +6,10 @@ const titleText = document.querySelector('.titleText')
 const urlText = document.querySelector('.urlText')
 
 
-
 add.addEventListener('click', () => {
     const titleTextValue = titleText.value
     const urlTextValue = urlText.value
+
     const liDOM = document.createElement('li');
     liDOM.innerHTML = `
                     <li>
@@ -27,7 +27,9 @@ add.addEventListener('click', () => {
 
 });
 
-const pintarLinksGuardados = () => {
+pintarLinksGuardados()
+
+function pintarLinksGuardados () {
     const arrayLinksGuardados = localStorage.getItem("Lista Links Guardados");
     const listaLinksGuardadosParse = JSON.parse(arrayLinksGuardados);
     listaLinksGuardadosParse.forEach((link) => {
@@ -36,7 +38,7 @@ const pintarLinksGuardados = () => {
             <li>
             <div class="listaUlTexto">
                 <p id="tituloUrl">${link.Título}</p>
-                <a id="url" href="${link.URL}">${link.URL}<a>
+                <a id="url" href="${link.URL}" target="_blank">${link.URL}<a>
             </div>
             <div class="listaUlCheckbox">
                 <input id="listCheckbox" type="checkbox" class="checkbox">
@@ -44,12 +46,12 @@ const pintarLinksGuardados = () => {
             </li>`
         lista.appendChild(liDOM)
     })
-}
-
-pintarLinksGuardados()
+};
 
 
-const addLinkLocalStorage = () => {
+
+
+function addLinkLocalStorage() {
 
     const arrayLinksGuardados = localStorage.getItem("Lista Links Guardados")
 
@@ -73,9 +75,9 @@ const addLinkLocalStorage = () => {
         const listaLinksGuardadosActualizada = JSON.stringify(listaLinksGuardadosParse);
 
         localStorage.setItem('Lista Links Guardados', listaLinksGuardadosActualizada);
-    }
-    }
+    }};
 
+    addLinkLocalStorage();
     const inputCheckbox = document.querySelector("#listCheckbox");
 
 
@@ -86,8 +88,17 @@ borrar.addEventListener('click', () => {
     
 })
 
+//URL.canParse(link.value)
 
+/* try { 
+                new URL(link.value);
+            } catch (error) {
+                linkWarning.textContent = 'Not a valid link.'
+                return false;
+            }
+*/
 
-
-
-
+/*paswd.addEventListener("click",()=>{
+    navigator.clipboard.writeText(pasword);
+    alert("Contraseña copiada!");
+})*/

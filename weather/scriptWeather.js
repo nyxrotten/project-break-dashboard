@@ -4,6 +4,7 @@ const ciudad = "Zaragoza"
 const endpoint = baseURL+apiKey+ciudad;
 const forecastBase = "https://api.weatherapi.com/v1/forecast.json?key=";
 const forecastDays = "&days=7&aqi=no&alerts=no";
+const forecastHours = "&days=1&aqi=no&alerts=no";
 
 
 let weatherBoxMain = document.querySelector(".weatherBoxMain")
@@ -59,10 +60,12 @@ const getWeatherThisWeek = async () => {
         forecast.forEach((weekDay) => {
             const divDom = document.createElement('div');
             divDom.classList.add("weatherForecastDay");
+            
             weatherForecast.appendChild(divDom);
             divDom.innerHTML = `<img src="${weekDay.day.condition.icon}">
                                 <h3>${weekDay.day.maxtemp_c}</h3>
-                                <h4>${weekDay.day.mintemp_c}</h4>`
+                                <h4>${weekDay.day.mintemp_c}</h4>
+                                <h5></h5>`
         })
     }
     catch (error) {
@@ -70,6 +73,36 @@ const getWeatherThisWeek = async () => {
     }
 };
 
-getWeatherThisWeek()
+getWeatherThisWeek();
 
+const getWeatherHours = async () => {
+    try {
+        const response = await fetch (forecastBase+apiKey+ciudad+forecastHours);
+        if (!response.ok) {
+            throw new Error("Error de API", response.status);
+        } 
+        const data = await response.json();
+        const forecastDayHours = data.forecast.forecastday[0].hour
 
+        const hours = document.querySelector('.hours');
+        forecastDayHours.forEach((hour) => {
+            const liDom = document.createElement('li');
+            liDom.innerHTML = `
+                        <p>${hour.time}</p>
+                        <img src="${hour.condition.icon}">
+                        <p>${hour.condition.text}</p>
+                        <p>${hour.temp_c}</p>
+                        <p>${hour.wind_kph} ${hour.wind_dir}</p>`
+            hours.appendChild(liDom);
+
+        })
+
+        
+    }
+    catch (error) {
+        console.log('Error', error)
+    }
+
+};
+
+getWeatherHours();
