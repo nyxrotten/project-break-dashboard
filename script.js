@@ -1,8 +1,8 @@
 let randomBackground = ()  => {
-    const num = Math.ceil(Math.random() * 6)
-    const background = document.body.style.backgroundImage = "url('background/background-"+ num +".png')";
+    const num = Math.ceil(Math.random() * 9);
+    document.body.style.backgroundImage = "url('background/background-"+ num +".png')";
 }
-randomBackground()
+randomBackground();
 
-setInterval(randomBackground, 10000)
+setInterval(randomBackground, 30000);
 

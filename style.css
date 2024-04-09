@@ -21,16 +21,6 @@ body {
     font-family: 'Roboto';
 }
 
-main {
-    width: 100%;
-    display: flex;
-    
-}
-nav {
-    width: 100%;
-    display: flex;
-}
-
 ul {
     list-style: none;
 }
@@ -39,372 +29,76 @@ a {
     text-decoration: none;
 }
 
+@media (min-width: 1280px) {
 
-@media (min-width: 350px) {
- /*//////////////////// LINKS  ///////////////*/
-/*///////////////////////////////////////////*/
+main {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+nav {
+    width: 250px;
+    display: flex;
+    border: 1px solid red;
+}
 
-    body {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    main {
-        flex-direction: column;
-        justify-content: center;
-        width: 350px;
-        
-    }
+/*////////////////DASHBROAD///////////*/
 
-    .navDesktop {
-        display: none;
-    }
+.boxContainer {
+    border: 1px solid red;
+    width: 950px;
+    height: 620px;
+    display: flex;
+}
 
-    .navMobile {
-        padding: 0px;
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        column-gap: 5px;
-        width: 100%;
-    }
-
-
-    .navMobile li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 56px;
-        height: 23px;
-        border-radius: 5px;
-        text-align: center;
-        border: 1px solid var(--darkSeaBlue-color);
-        background-color: var(--paleBlue-color);
-        box-shadow: 0px 0px 20px var(--darkSeaBlueShadow-color);
-        opacity: 70%;
-        padding: 0px;
-    }
-
-    .navMobile a {
-        color: var(--darkSeaBlue-color)
-    }
-
-    .navMobile li:active {
-        background-color: var(--softOrange-color);
-    }
-
-    .navMobile a:hover {
-        color: var(--paleBlue-color)
-    }
-
-    .linksBox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
-        border: 1px solid red;
-    }
-
-    .linksBackground {
-        width: 308px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .linksList {
-        width: 308px;
-        background-color: white;
-        border-radius: 10px;
-        font-family: 'Roboto Serif';
-        display: flex;
-        flex-direction: column;
-    }
-
-    .elementosLista {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-
-    }
-
-    .listaUL{
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-        padding: 30px;
-        font-style: italic;
-
-    }
-
-    #tituloUrl {
-        font-weight: 600;
-    }
-
-    #url {
-        width: 200px;
-    }
-
-    .listaUlCheckbox {
-        position: relative;
-        left: 220px;
-        bottom: 25px;
-    }
-
-    #listCheckbox {
-        border: 1px solid red;
-    }
-
-    .linksInput {
-        display: flex;
-        flex-direction: column;
-        width: 270px;
-        margin-top: 20px;
-        padding: 18px;
-        border-radius: 8px;
-        border: 1px solid var(--darkSeaBlue-color)
-    }
-
-    .linksInput label {
-        font-family: 'Roboto Slab';
-        font-weight: 500;
-        color: var(--darkSeaBlue-color)
-    }
-
-    .linksInput input {
-        border-radius: 5px;
-        border: 1px solid var(--darkSeaBlue-color);
-        height: 25px;
-        font-family: 'Roboto Serif';
-        font-style: italic;
-        padding-left: 10px;
-        margin-bottom: 10px;
-    }
-
-
-    .linksInputButtons {
-        margin-top: 10px;
-    }
-
-    .linksInputButtons button {
-        width: 100%;
-        font-family: 'Roboto';
-        font-size: 1rem;
-        border-radius: 5px;
-        padding: 5px 0px;
-        border: 1px solid var(--paleBlue-color)
-    }
-
-    .linksInputButtons button:first-child {
-        background-color: var(--darkSeaBlue-color);
-        margin-bottom: 5px;
-        color:white;
-    }
-
-    .linksInputButtons button:last-child {
-        background-color: var(--paleBlue-color);
-        border: 1px solid var(--darkSeaBlue-color);
-        color: var(--darkSeaBlue-color)
-    }
-
-    .linksInputButtons button:first-child:hover {
-        background-color: var(--softOrange-color);
-        box-shadow: 2px 0px 10px var(--darkSeaBlueShadow-color);
-        font-family: 'Roboto Serif';
-        font-size: 1rem;
-        font-style: italic;
-        border: 1px solid var(--softOrange-color);
-    }
-
-    .linksInputButtons button:last-child:hover {
-        background-color: var(--softOrange-color);
-        box-shadow: 2px 0px 10px var(--darkSeaBlueShadow-color);
-        font-family: 'Roboto Serif';
-        font-size: 1rem;
-        font-style: italic;
-        border: 1px solid var(--softOrange-color);
-        color: white;
-    }
-
-    /*//////////////////// WEATHER  ///////////////*/
-/*///////////////////////////////////////////*/
+.weatherPasswordClockBox {
+    border: 1px solid red;
+    width: 66%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .weatherBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    
-    height: 500px;
-}
-
-.weatherBackground {
-    width: 308px;
+    border: 1px solid blue;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    max-width: 663px;
+    max-height: 300px;
+}
+
+.passwordBox {
+    width: 49%;
+    border: 1px solid orange;
+}
+
+.showPassword {
+    width: 90%;
+    height: 30px;
     background-color: white;
     border-radius: 10px;
-    padding: 25px 0px;
-}
-
-.weatherGeneral {
-    width: 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    font-family: 'Roboto Slab';
-
-}
-.weatherGeneral img {
-    width: 80%;
+    padding-left: 10px;
 }
 
-.weatherDetails {
-    width: 200px;
-
+.clockBox {
+    width: 50%;
+    border: 1px solid orange;
 }
 
-#weatherLocation {
-    width: 50px;
-    height: 30px;
-}
-
-#wheatherTemperature {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    column-gap: 10px;
-}
-#weatherDetailInfo {
-    display: flex;
-    column-gap: 5px;
-    font-size: 0.7rem;
-    font-family: 'Roboto Slab';
-}
-
-#windInfo, #cloudInfo, #humUvInfo {
-    border: 1px solid var(--seaBlue-color);
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    row-gap: 5px;
-    
-}
-.elementosLista {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-}
-
-.weatherForecast {
-    display: flex;
-    
+.linksBox {
+    width: 34%;
+    border: 1px solid black;
 }
 
 }
 
 
-@media (min-width: 760px) {
-    body {
-        display: flex;
-        flex-direction: row;
-        
-    }
-    main {
-        width: 760px;
-        flex-direction: row;
-    }
-
-    nav {
-        width: 200px;
-    }
-
-    .navMobile {
-        display: none;
-        }
-
-    .navDesktop {
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-        }
-    
-        .navDesktop:first-child {
-            margin-top: 50px;
-        }
-
-        .navDesktop li {
-            display: flex;
-            justify-content: center;
-            align-items: center;            width: 135px;
-            height: 43px;
-            border: 1px solid var(--darkSeaBlue-color);
-            border-radius: 10px;
-            font-size: 1rem;
-            box-shadow: 0px 0px 20px var(--darkSeaBlueShadow-color);
-        }
-
-        .navDesktop li:hover {
-            background-color: var(--softOrange-color);
-            border: 1px solid var(--softOrange-color);
-        }
-
-        .navDesktop a {
-            color: var(--darkSeaBlue-color);
-            padding: 10px 40px;
-        }
-
-        .navDesktop a:hover {
-            color: white;
-            font-family: 'Roboto Serif';
-            font-style: italic;
-        }
-    
-        .navDesktop a:active {
-            color: white;
-            font-family: 'Roboto Slab';
-            font-style: bold;
-        }
-
-        .linksBox {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            width: 500px;
-
-        }
-
-        .linksBackground {
-            width: 508px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .linksList {
-            width: 508px;
-            height: 700px;
-            background-color: white;
-            border-radius: 10px;
-            font-family: 'Roboto Serif';
-            display: flex;
-            flex-direction: column;
-        }
-        .elementosLista {
-            height: 800px;
-        }
-        .linksInput {}
 
 
-    }
 
-@media (min-width: 1024px) {
-    
-
-    
-}
