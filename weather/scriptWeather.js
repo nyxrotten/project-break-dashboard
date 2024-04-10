@@ -86,6 +86,7 @@ const getWeatherHours = async () => {
         const data = await response.json();
         const forecastDayHours = data.forecast.forecastday[0].hour
         const hours = document.querySelector('.hours');
+        console.log(hours)
         
         forecastDayHours.forEach((hour) => {
             const liDom = document.createElement('li');
@@ -107,3 +108,5 @@ const getWeatherHours = async () => {
 };
 
 getWeatherHours();
+
+

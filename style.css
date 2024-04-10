@@ -33,6 +33,60 @@ a {
     text-decoration: none;
 }
 
+main {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    row-gap: 30px;
+}
+
+nav li, nav li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    
+    width: 135px;
+    height: 42px;
+    border-radius: 15px;
+    border: 1px solid var(--darkSeaBlue-color)
+}
+
+nav li a {
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    color: var(--darkSeaBlue-color)
+}
+
+nav li:hover {
+    background-color: var(--softOrange-color);
+    border: 1px solid var(--softOrange-color);
+    font-family: 'Roboto';
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+nav li a:hover {
+    color: var(--paleBlue-color);
+}
+
 @media (min-width: 1280px) {
 
 
@@ -270,6 +324,8 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     align-items: center;
     row-gap: 10px;
 }
@@ -363,193 +419,7 @@ a {
 
 
 
-}
 
-@media (min-width: 900px) {
-
-    main {
-        width: 100%;
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        
-    }
-    nav {
-        display: flex;
-        justify-content: center;
-    }
-    
-    nav ul {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 30px;
-        row-gap: 30px;
-    }
-    
-    nav li, nav li a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    nav li {
-        
-        width: 135px;
-        height: 42px;
-        border-radius: 15px;
-        border: 1px solid var(--darkSeaBlue-color)
-    }
-    
-    nav li a {
-        width: 100%;
-        height: 100%;
-        font-weight: 400;
-        color: var(--darkSeaBlue-color)
-    }
-    
-    nav li:hover {
-        background-color: var(--softOrange-color);
-        border: 1px solid var(--softOrange-color);
-        font-family: 'Roboto';
-        font-style: italic;
-        font-size: 1.05rem;
-    }
-    
-    nav li a:hover {
-        color: var(--paleBlue-color);
-    }
-    /*////////////////DASHBROAD///////////*/
-   /* 
-    .boxContainer {
-    
-        margin-right: 50px;
-        width: 850px;
-        height: 620px;
-        display: flex;
-        flex-grow: 2;
-        column-gap: 20px;
-    }
-    
-    .weatherPasswordClockBox {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        row-gap: 15px;
-        column-gap: 15px;
-        
-    }
-    
-    .passwordClockBox {
-        display: flex;
-        column-gap: 20px;
-        justify-content: space-around;
-        width: 100%;
-    
-    }
-    
-    .passwordBox,
-    .clockBox {
-        width: 100%;
-    }
-    
-    .weatherBox,
-    .passwordBox,
-    .clockBox,
-    .linksBox {
-        background-color: #e6f7f280;
-        border-radius: 20px;
-    }
-    
-    .weatherBox {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        
-    }
-    .weatherGeneral {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 25%;
-        position: relative;
-        bottom: 50px;
-        font-size: 1.5rem;
-        color: var(--darkSeaBlue-color)
-    }
-    
-    .weatherGeneral img {
-        width: 150px;
-    }
-    
-    .weatherDetails {
-        width: 100%;
-        padding: 50px 0px 0px 50px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-    }
-    
-    #weatherLocation {
-        font-size: 1.5rem;
-        color: var(--darkBlueGreen-color)
-    }
-    
-    #wheatherTemperature {
-        display: flex;
-        flex-direction: row;
-        align-items: first baseline;
-    }
-    
-    #weatherTempNumb {
-        font-size: 2rem;
-        color: var(--softOrange-color)
-        
-    }
-    
-    #weatherTempRealNumb {
-        font-size: 1.5rem;
-        padding-left: 10px;
-        color: var(--darkSeaBlue-color);
-        
-    }
-    
-    
-    #wheatherTemperature p {
-        font-size: 0.8rem;
-        font-style: italic;
-        font-weight: 200;
-        color: var(--darkSeaBlue-color)
-    }
-    
-    
-    #weatherDetailInfo {
-        display: flex;
-        flex-direction: row;
-        column-gap: 20px;
-    }
-    
-    #windInfo,
-    #cloudInfo,
-    #humUVInfo {
-        font-size: 1rem;
-        padding-left: 10px;
-        font-style: italic;
-        color: var(--darkSeaBlue-color);
-    }
-    
-    .showPassword {
-        height: 30px;
-        background-color: white;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-        flex-grow: 2;
-    } */
     
     }
 

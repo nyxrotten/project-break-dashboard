@@ -64,4 +64,4 @@ const fecha = document.querySelector('.fecha')
 fecha.innerText = `Hoy es ${currentWeekDay}
 ${day} de ${currentMonth} de ${year}`;
 
-
+document.body.style.backgroundImage = "url('../background/background-1.png')";

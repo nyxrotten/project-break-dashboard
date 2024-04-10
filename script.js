@@ -5,5 +5,5 @@ let randomBackground = ()  => {
 }
 randomBackground();
 
-setInterval(randomBackground, 30000);
+setInterval(randomBackground, 5000);
 
