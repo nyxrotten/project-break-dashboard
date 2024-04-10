@@ -10,6 +10,8 @@
     --seaBlue-color: #6EAEAE;
     --darkSeaBlue-color: #5B9090;
     --darkSeaBlueShadow-color: #5b909060;
+    --smokeWhite-color: #e6f7f280;
+    --transparent-color: rgba(0, 0, 0, 0);
 }
 
 .boldTitle {
@@ -18,7 +20,9 @@
 
 body {
     background-color: var(--paleBlue-color);
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab';
+    background-size: cover;
+    
 }
 
 ul {
@@ -31,49 +35,166 @@ a {
 
 @media (min-width: 1280px) {
 
-main {
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    
-}
-nav {
-    width: 250px;
-    display: flex;
-    border: 1px solid red;
-}
 
 /*////////////////DASHBROAD///////////*/
 
 .boxContainer {
-    border: 1px solid red;
-    width: 950px;
+
+    margin-right: 50px;
+    width: 850px;
     height: 620px;
     display: flex;
+    flex-grow: 2;
+    column-gap: 20px;
 }
 
 .weatherPasswordClockBox {
-    border: 1px solid red;
-    width: 66%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 15px;
+    column-gap: 15px;
+    
 }
 
+.passwordClockBox {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.passwordBox,
+.clockBox {
+    width: 100%;
+}
+
+.linksBox {
+    width: 40%;
+}
+
+.weatherBox,
+.passwordBox,
+.clockBox,
+.linksBox {
+    background-color: var(--smokeWhite-color);
+    border-radius: 20px;
+}
+
+/*////////////////WEATHER////////////////*/
+/*////////////////WEATHER////////////////*/
+/*////////////////WEATHER////////////////*/
+/*////////////////WEATHER////////////////*/
+
+
+
 .weatherBox {
-    border: 1px solid blue;
     width: 100%;
     display: flex;
     flex-direction: row;
-    max-width: 663px;
-    max-height: 300px;
+    flex-grow: 1;
+    
+}
+.weatherGeneral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    position: relative;
+    bottom: 50px;
+    font-size: 1.5rem;
+    color: var(--darkSeaBlue-color)
 }
 
+.weatherGeneral img {
+    width: 150px;
+}
+
+.weatherDetails {
+    width: 100%;
+    padding: 50px 0px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#weatherLocation {
+    font-size: 1.5rem;
+    color: var(--darkBlueGreen-color)
+}
+
+#wheatherTemperature {
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+}
+
+#weatherTempNumb {
+    font-size: 2rem;
+    color: var(--softOrange-color)
+    
+}
+
+#weatherTempRealNumb {
+    font-size: 1.5rem;
+    padding-left: 10px;
+    color: var(--darkSeaBlue-color);
+    
+}
+
+
+#wheatherTemperature p {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 200;
+    color: var(--darkSeaBlue-color)
+}
+
+
+#weatherDetailInfo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+#windInfo,
+#cloudInfo,
+#humUVInfo {
+    font-size: 1rem;
+    padding-left: 10px;
+    font-style: italic;
+    color: var(--darkSeaBlue-color);
+}
+
+.weatherForecast {
+    display: flex;
+    text-align: center;    
+}
+
+.weatherForecast h3 {
+    color: var(--softOrange-color)
+}
+
+.weatherForecast h4 {
+    color: var(--seaBlue-color)
+}
+
+
+/*////////////////PASSWORD////////////////*/
+/*////////////////PASSWORD////////////////*/
+/*////////////////PASSWORD////////////////*/
+/*////////////////PASSWORD////////////////*/
+
 .passwordBox {
-    width: 49%;
-    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 30px;
+    row-gap: 10px;
+    
 }
 
 .showPassword {
@@ -84,19 +205,353 @@ nav {
     display: flex;
     align-items: center;
     padding-left: 10px;
+    font-size: 0.8rem;
+    color: var(--softOrange-color)
 }
 
-.clockBox {
-    width: 50%;
-    border: 1px solid orange;
+.number {
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    font-family: 'Roboto Slab';
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--palePistaccio-color);
+    height: 30px;
 }
 
-.linksBox {
-    width: 34%;
-    border: 1px solid black;
+.crear,
+.copiar {
+    font-family: 'Roboto Slab';
+    border: none;
+    border-radius: 8px;
+    width: 180px;
+    height: 30;
+    background-color: var(--transparent-color);
+    color: var(--darkSeaBlue-color)
 }
 
+.crear {
+    border: 1.5px solid var(--smokeWhite-color)
 }
+.copiar {
+    border: 1.5px solid var(--smokeWhite-color)
+}
+
+.crear:hover {
+    background-color: var(--softOrange-color);
+    border: none;
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.copiar:hover {
+    background-color: var(--palePistaccio-color);
+    border: none;
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.crear:active {
+    background-color: var(--smokeWhite-color);
+    color: var(--softOrange-color);
+    border: 1px solid var(--softOrange-color);
+}
+
+/*////////////////CLOCK////////////////*/
+/*////////////////CLOCK////////////////*/
+/*////////////////CLOCK////////////////*/
+/*////////////////CLOCK////////////////*/
+
+.clockBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.fecha, .frase {
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--darkSeaBlue-color);
+
+}
+
+.clock {
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--softOrange-color);
+}
+
+.frase {
+    font-weight: 500;
+}
+
+/*////////////////LINKS////////////////*/
+/*////////////////LINKS////////////////*/
+/*////////////////LINKS////////////////*/
+/*////////////////LINKS////////////////*/
+
+.linksList {
+    padding-top: 30px;
+    
+}
+
+.elementosLista {
+    height: 65%;
+    
+}
+
+.linksInput {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 10px;
+    padding-left: 15px;
+}
+
+.titleText,
+.urlText,
+.guardar,
+.delete {
+    height: 30px;
+    border: none;
+    border-radius:10px;
+    width: 95%;
+}
+
+.titleText,
+.urlText{
+
+    font-family: 'Roboto Slab';
+    padding-left: 10px;
+    font-style: italic;
+    font-weight: 200;
+}
+
+.linksInputButtons {
+    display: flex;
+    width: 95%;
+    column-gap: 10px;
+    
+}
+
+.guardar,
+.delete {
+    font-family: 'Roboto Slab';
+    border: 1.5px solid var(--smokeWhite-color);
+    background-color: var(--transparent-color);
+}
+
+.guardar:hover,
+.delete:hover {
+    background-color: var(--softOrange-color);
+    border: none;
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.delete:hover {
+    background-color: var(--palePistaccio-color);
+}
+
+
+
+}
+
+@media (min-width: 900px) {
+
+    main {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        row-gap: 30px;
+    }
+    
+    nav li, nav li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    nav li {
+        
+        width: 135px;
+        height: 42px;
+        border-radius: 15px;
+        border: 1px solid var(--darkSeaBlue-color)
+    }
+    
+    nav li a {
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        color: var(--darkSeaBlue-color)
+    }
+    
+    nav li:hover {
+        background-color: var(--softOrange-color);
+        border: 1px solid var(--softOrange-color);
+        font-family: 'Roboto';
+        font-style: italic;
+        font-size: 1.05rem;
+    }
+    
+    nav li a:hover {
+        color: var(--paleBlue-color);
+    }
+    /*////////////////DASHBROAD///////////*/
+   /* 
+    .boxContainer {
+    
+        margin-right: 50px;
+        width: 850px;
+        height: 620px;
+        display: flex;
+        flex-grow: 2;
+        column-gap: 20px;
+    }
+    
+    .weatherPasswordClockBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 15px;
+        column-gap: 15px;
+        
+    }
+    
+    .passwordClockBox {
+        display: flex;
+        column-gap: 20px;
+        justify-content: space-around;
+        width: 100%;
+    
+    }
+    
+    .passwordBox,
+    .clockBox {
+        width: 100%;
+    }
+    
+    .weatherBox,
+    .passwordBox,
+    .clockBox,
+    .linksBox {
+        background-color: #e6f7f280;
+        border-radius: 20px;
+    }
+    
+    .weatherBox {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        
+    }
+    .weatherGeneral {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25%;
+        position: relative;
+        bottom: 50px;
+        font-size: 1.5rem;
+        color: var(--darkSeaBlue-color)
+    }
+    
+    .weatherGeneral img {
+        width: 150px;
+    }
+    
+    .weatherDetails {
+        width: 100%;
+        padding: 50px 0px 0px 50px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    
+    #weatherLocation {
+        font-size: 1.5rem;
+        color: var(--darkBlueGreen-color)
+    }
+    
+    #wheatherTemperature {
+        display: flex;
+        flex-direction: row;
+        align-items: first baseline;
+    }
+    
+    #weatherTempNumb {
+        font-size: 2rem;
+        color: var(--softOrange-color)
+        
+    }
+    
+    #weatherTempRealNumb {
+        font-size: 1.5rem;
+        padding-left: 10px;
+        color: var(--darkSeaBlue-color);
+        
+    }
+    
+    
+    #wheatherTemperature p {
+        font-size: 0.8rem;
+        font-style: italic;
+        font-weight: 200;
+        color: var(--darkSeaBlue-color)
+    }
+    
+    
+    #weatherDetailInfo {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+    }
+    
+    #windInfo,
+    #cloudInfo,
+    #humUVInfo {
+        font-size: 1rem;
+        padding-left: 10px;
+        font-style: italic;
+        color: var(--darkSeaBlue-color);
+    }
+    
+    .showPassword {
+        height: 30px;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        flex-grow: 2;
+    } */
+    
+    }
 
 
 

@@ -14,7 +14,6 @@ const symb = "!@#$%^&*()-_=+";
 
 crear.addEventListener('click', () => {
     showPassword.innerText = crearPassword();
-    console.log(showPassword.innerText)
     
 })
 
@@ -41,7 +40,6 @@ crearPassword();
 //BOTÓN COPIARA CONTRASEÑA
 
 copiar.addEventListener("click",()=>{
-    navigator.clipboard.writeText(showPassword.value);
-    alert("Contraseña copiada!");
-    console.log(showPassword.value)
+    navigator.clipboard.writeText(showPassword.innerText);
 })
+

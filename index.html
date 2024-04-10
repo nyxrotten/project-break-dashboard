@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <main>
+        <main> 
         <nav>
             <ul>
                 <li><a href="/index.html">Dashbroad</a></li>
@@ -19,7 +19,7 @@
                 <li><a href="/links/links.html">Links</a></li>
                 <li><a href="/password/password.html">Password</a></li>
             </ul>
-        </nav>
+        </nav> 
         <div class="boxContainer">
             <section class="weatherPasswordClockBox">
                 <div class="weatherBox">
@@ -34,22 +34,25 @@
                                 <div id="cloudInfo"></div>
                                 <div id="humUvInfo"></div>
                             </section>
+                            <section class="weatherForecast">
+                            </section>
                         </div>
                 </div>
-                <div class="passwordBox">
-                    <div class="showPassword"></div>
-                    <input class="number" type="number" placeholder="12" min="12" max="50" value="12">
-                    <button class="crear" type="submit">CREAR CONTRASEÑA</button>
-                    <button class="copiar">COPIAR</button>
-                </div>
-                <div class="clockBox">
-                    <div class="fecha"></div>
-                    <div class="clock"></div>
-                    <div class="frase"></div>
+                <div class="passwordClockBox">
+                    <div class="passwordBox">
+                        <div class="showPassword"></div>
+                        <input class="number" type="number" placeholder="12" min="12" max="50" value="12">
+                        <button class="crear" type="submit">CREAR CONTRASEÑA</button>
+                        <button class="copiar">COPIAR</button>
+                    </div>
+                    <div class="clockBox">
+                        <div class="fecha"></div>
+                        <div class="clock"></div>
+                        <div class="frase"></div>
+                    </div>
                 </div>
             </section>
             <section class="linksBox">
-                <div class="linksBox">
                     <div class="linksList">
                         <div class="elementosLista">
                             <ul class="listaUl"></ul>
@@ -60,8 +63,8 @@
                         <label for="urlText">URL</label>
                         <input type="url" name="urlText" class="urlText" placeholder="Aquí en enlace" pattern="https://.*" required></input>
                         <div class="linksInputButtons">
-                            <input type="submit" class="guardar" value="Guardar"></input>
-                            <input type="submit" class="delete" value="Borrar"></input>
+                            <input type="submit" class="guardar" value="GUARDAR"></input>
+                            <input type="submit" class="delete" value="BORRAR"></input>
                         </div>
                     </form>
                 </div>

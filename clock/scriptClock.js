@@ -23,14 +23,13 @@ setInterval(getTime, 1000)
 
 getTime()
 
-
-const noche = "Es hora de descansar. Apaga y sigue mañana";
-const buenosDias = "Buenos días, desayuna fuerte y a darle al código";
-const medioDia = "Echa un rato más pero no olvides comer";
+const noche = "¡Es hora de descansar! Apaga y sigue mañana.";
+const buenosDias = "¡Buenos días, desayuna fuerte y a darle al código!";
+const medioDia = "Echa un rato más, ¡pero no olvides comer!";
 const comida = "Espero que hayas comido";
-const tardePronto = "Buenas tardes, el último empujón";
-const tardeTarde = "Estyo ya son horas extras... Piensa en parar pronto";
-const buenasNoches = "Buenas noches, es hora de pensar en parar y descansar";
+const tardePronto = "¡Buenas tardes, el último empujón!";
+const tardeTarde = "Esto ya son horas extras... ¡Piensa en parar pronto!";
+const buenasNoches = "¡Buenas noches!, es hora de pensar en parar y descansar";
 const frase = document.querySelector('.frase');
 
 const frases = () => {
@@ -62,6 +61,7 @@ const year = today.getFullYear();
 
 
 const fecha = document.querySelector('.fecha')
-fecha.innerText = `Hoy es ${currentWeekDay} ${day} de ${currentMonth} de ${year}`;
+fecha.innerText = `Hoy es ${currentWeekDay}
+${day} de ${currentMonth} de ${year}`;
 
 

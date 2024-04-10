@@ -23,8 +23,10 @@ const getWeatherNow = async () => {
                                     <h2 id="weatherText">${current.condition.text}</h2>`
         
         const weatherTemperature = document.querySelector('#wheatherTemperature')
-        weatherTemperature.innerHTML = `<h1 id="weatherTemperature">${current.temp_c}º</h1>
-                                    <h3 id="weatherTempReal"> ${current.feelslike_c}º</h3>`
+        weatherTemperature.innerHTML = `<h1 id="weatherTempNumb">${current.temp_c}º</h1>
+                                        <p>Real</p>
+                                        <h3 id="weatherTempRealNumb"> ${current.feelslike_c}º</h3>
+                                        <p>Feels Like</p>`
 
         const windInfo = document.querySelector('#windInfo')
         windInfo.innerHTML = `<h4>Wind ${current.wind_kph} km/h</h4>
@@ -83,17 +85,16 @@ const getWeatherHours = async () => {
         } 
         const data = await response.json();
         const forecastDayHours = data.forecast.forecastday[0].hour
-
         const hours = document.querySelector('.hours');
+        
         forecastDayHours.forEach((hour) => {
             const liDom = document.createElement('li');
             liDom.innerHTML = `
-                        <p>${hour.time}</p>
                         <img src="${hour.condition.icon}">
                         <p>${hour.condition.text}</p>
                         <p>${hour.temp_c}</p>
                         <p>${hour.wind_kph} ${hour.wind_dir}</p>`
-            hours.appendChild(liDom);
+                        hours.appendChild(liDom);
 
         })
 
