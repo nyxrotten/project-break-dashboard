@@ -19,7 +19,7 @@ const getTime = () => {
 
 }
 
-setInterval(getTime, 1000)
+// setInterval(getTime, 1000)
 
 getTime()
 

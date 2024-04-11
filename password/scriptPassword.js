@@ -20,11 +20,20 @@ crear.addEventListener('click', () => {
 
 //FUNCIÓN CREAR CONTRASEÑA RANDOM
 
+
 const crearPassword = () => {
     const numberValue = Number(number.value);
     let password = '';
     const caracterPassword = minus + mayus + num + symb;
- 
+    console.log(typeof numberValue)
+
+    if (numberValue < 12) {
+        return  "Minimo 12 caracteres"
+    }
+    else if (numberValue > 50) {
+        return  "Máximo 50 caracteres"
+    }
+    else {
     for (let i = 1; i <= numberValue; i++) {
         const indicePassword = Math.floor(Math.random()
             * caracterPassword.length);
@@ -33,9 +42,26 @@ const crearPassword = () => {
     }
  
     return password;
-}
+}}
 
 crearPassword();
+
+// const crearPassword = () => {
+//     const numberValue = Number(number.value);
+//     let password = '';
+//     const caracterPassword = minus + mayus + num + symb;
+ 
+//     for (let i = 1; i <= numberValue; i++) {
+//         const indicePassword = Math.floor(Math.random()
+//             * caracterPassword.length);
+ 
+//         password += caracterPassword.charAt(indicePassword)
+//     }
+ 
+//     return password;
+// }
+
+// crearPassword();
 
 //BOTÓN COPIARA CONTRASEÑA
 
