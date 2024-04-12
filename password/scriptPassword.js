@@ -25,7 +25,6 @@ const crearPassword = () => {
     const numberValue = Number(number.value);
     let password = '';
     const caracterPassword = minus + mayus + num + symb;
-    console.log(typeof numberValue)
 
     if (numberValue < 12) {
         return  "Minimo 12 caracteres"

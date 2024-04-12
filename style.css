@@ -14,65 +14,66 @@
     --transparent-color: rgba(0, 0, 0, 0);
 }
 
-.boldTitle {
-    font-style: italic;
-}
-
 body {
     background-color: var(--paleBlue-color);
     font-family: 'Roboto Slab';
     background-size: cover;
-    
+}
+
+main,
+nav,
+nav ul,
+nav li,
+nav li a {
+    display: flex;
+}
+
+main,
+nav,
+nav li,
+nav li a {
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    margin-top: 50px;
 }
 
 ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
-main {
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    
-}
-nav {
-    display: flex;
-    justify-content: center;
-}
-
 nav ul {
     margin-top: 50px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 30px;
     row-gap: 30px;
 }
 
-nav li, nav li a {
+nav li,
+nav li a {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 nav li {
-    
     width: 135px;
     height: 42px;
     border-radius: 15px;
-    border: 1px solid var(--darkSeaBlue-color)
+    border: 1px solid var(--darkSeaBlue-color);
 }
 
 nav li a {
     width: 100%;
     height: 100%;
     font-weight: 400;
-    color: var(--darkSeaBlue-color)
+    color: var(--darkSeaBlue-color);
+}
+
+a {
+    text-decoration: none;
 }
 
 nav li:hover {
@@ -87,46 +88,7 @@ nav li a:hover {
     color: var(--paleBlue-color);
 }
 
-@media (min-width: 1280px) {
 
-
-/*////////////////DASHBROAD///////////*/
-
-.boxContainer {
-
-    margin-right: 50px;
-    width: 850px;
-    height: 620px;
-    display: flex;
-    flex-grow: 2;
-    column-gap: 20px;
-}
-
-.weatherPasswordClockBox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 15px;
-    column-gap: 15px;
-    
-}
-
-.passwordClockBox {
-    display: flex;
-    column-gap: 20px;
-    justify-content: space-around;
-    width: 100%;
-
-}
-
-.passwordBox,
-.clockBox {
-    width: 100%;
-}
-
-.linksBox {
-    width: 40%;
-}
 
 .weatherBox,
 .passwordBox,
@@ -136,127 +98,112 @@ nav li a:hover {
     border-radius: 20px;
 }
 
-/*////////////////WEATHER////////////////*/
-/*////////////////WEATHER////////////////*/
-/*////////////////WEATHER////////////////*/
-/*////////////////WEATHER////////////////*/
+/*////////////////// CLOCK REGLAS GENERALES ///////////*/
 
-
-
-.weatherBox {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    
-}
-.weatherGeneral {
+.clockBox{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     align-items: center;
-    justify-content: center;
-    width: 25%;
-    position: relative;
-    bottom: 50px;
-    font-size: 1.5rem;
-    color: var(--darkSeaBlue-color)
-}
-
-.weatherGeneral img {
-    width: 150px;
-}
-
-.weatherDetails {
-    width: 100%;
-    padding: 50px 0px 0px 50px;
-    display: flex;
-    flex-direction: column;
     row-gap: 10px;
 }
 
-#weatherLocation {
-    font-size: 1.5rem;
-    color: var(--darkBlueGreen-color)
+.fecha,
+.frase {
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--darkSeaBlue-color);
 }
 
-#wheatherTemperature {
+.clock {
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--softOrange-color);
+}
+
+.frase {
+    font-weight: 500;
+}
+
+.iconoReloj {
+    display: none;
+}
+
+/*////////////////// WEATHER REGLAS GENERALES ///////////*/
+
+.weatherBox,
+.weatherGeneral,
+.weatherDetails {
     display: flex;
+}
+
+.weatherBox {
+    width: 100%;
     flex-direction: row;
-    align-items: first baseline;
+    flex-grow: 1;
+}
+
+.weatherGeneral {
+    color: var(--darkSeaBlue-color);
+}
+
+#weatherLocation {
+    color: var(--darkSeaBlue-color);
 }
 
 #weatherTempNumb {
-    font-size: 2rem;
-    color: var(--softOrange-color)
-    
+    color: var(--softOrange-color); 
 }
 
 #weatherTempRealNumb {
-    font-size: 1.5rem;
-    padding-left: 10px;
     color: var(--darkSeaBlue-color);
-    
 }
-
 
 #wheatherTemperature p {
-    font-size: 0.8rem;
     font-style: italic;
     font-weight: 200;
-    color: var(--darkSeaBlue-color)
-}
-
-
-#weatherDetailInfo {
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
+    color: var(--seaBlue-color);
 }
 
 #windInfo,
 #cloudInfo,
 #humUVInfo {
-    font-size: 1rem;
-    padding-left: 10px;
     font-style: italic;
     color: var(--darkSeaBlue-color);
 }
 
 .weatherForecast {
     display: flex;
-    text-align: center;    
+    text-align: center;
 }
 
 .weatherForecast h3 {
-    color: var(--softOrange-color)
+    color: var(--softOrange-color);
 }
 
 .weatherForecast h4 {
-    color: var(--seaBlue-color)
+    color: var(--seaBlue-color);
 }
 
+/*////////////////// PASSWORD REGLAS GENERALES ///////////*/
 
-/*////////////////PASSWORD////////////////*/
-/*////////////////PASSWORD////////////////*/
-/*////////////////PASSWORD////////////////*/
-/*////////////////PASSWORD////////////////*/
-
-.passwordBox {
+.passwordBox,
+.showPassword {
     display: flex;
+}
+.passwordBox {
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    padding-left: 30px;
     row-gap: 10px;
-    
 }
 
 .showPassword {
-    width: 90%;
-    height: 30px;
     background-color: white;
     border-radius: 10px;
-    display: flex;
     align-items: center;
     padding-left: 10px;
     font-size: 0.8rem;
@@ -279,17 +226,9 @@ nav li a:hover {
     font-family: 'Roboto Slab';
     border: none;
     border-radius: 8px;
-    width: 180px;
-    height: 30;
     background-color: var(--transparent-color);
-    color: var(--darkSeaBlue-color)
-}
-
-.crear {
-    border: 1.5px solid var(--smokeWhite-color)
-}
-.copiar {
-    border: 1.5px solid var(--smokeWhite-color)
+    color: var(--darkSeaBlue-color);
+    border: 1.5px solid var(--smokeWhite-color);
 }
 
 .crear:hover {
@@ -314,59 +253,19 @@ nav li a:hover {
     border: 1px solid var(--softOrange-color);
 }
 
-/*////////////////CLOCK////////////////*/
-/*////////////////CLOCK////////////////*/
-/*////////////////CLOCK////////////////*/
-/*////////////////CLOCK////////////////*/
 
-.clockBox{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    align-items: center;
-    row-gap: 10px;
-}
-
-.fecha, .frase {
-    font-weight: 300;
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--darkSeaBlue-color);
-
-}
-
-.clock {
-    font-weight: 500;
-    font-size: 2.5rem;
-    color: var(--softOrange-color);
-}
-
-.frase {
-    font-weight: 500;
-}
-
-/*////////////////LINKS////////////////*/
-/*////////////////LINKS////////////////*/
-/*////////////////LINKS////////////////*/
-/*////////////////LINKS////////////////*/
+/*////////////////// LINKS REGLAS GENERALES ///////////*/
 
 .linksList {
     padding-top: 30px;
-    
+    justify-content: flex-start;
 }
-
 .elementosLista {
     height: 65%;
-    
 }
-
 .linksInput {
     display: flex;
     flex-direction: column;
-
     row-gap: 10px;
     padding-left: 15px;
 }
@@ -381,9 +280,12 @@ nav li a:hover {
     width: 95%;
 }
 
+.listaUl {
+    margin-left: -20px;
+}
+
 .titleText,
 .urlText{
-
     font-family: 'Roboto Slab';
     padding-left: 10px;
     font-style: italic;
@@ -392,9 +294,29 @@ nav li a:hover {
 
 .linksInputButtons {
     display: flex;
-    width: 95%;
-    column-gap: 10px;
-    
+}
+
+.deleteSelf {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Roboto';
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--palePistaccio-color);
+    background-color: var(--transparent-color);
+    color: var(--seaBlue-color);
+}
+
+.deleteSelf:hover { 
+    font-weight: 900;
+    border: 1px solid var(--softOrange-color);
+    background-color: var(--softOrange-color);
+    color: var(--smokeWhite-color);
+
 }
 
 .guardar,
@@ -417,11 +339,288 @@ nav li a:hover {
     background-color: var(--palePistaccio-color);
 }
 
+@media (min-width: 1280px) {
 
 
+/*//////////////// DASHBOARD ///////////////////
+//////////// {min-width 1280px} /////////////*/
 
+
+.boxContainer,
+.weatherPasswordClockBox,
+.passwordClockBox {
+    display: flex;
+}
+
+.boxContainer {
+    margin-right: 50px;
+    width: 850px;
+    height: 620px;
+    column-gap: 20px;
+}
+
+.weatherPasswordClockBox {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 15px;
+    column-gap: 15px;
     
+}
+
+.passwordClockBox {
+    column-gap: 20px;
+    justify-content: space-around;
+
+}
+.passwordClockBox,
+.passwordBox,
+.clockBox {
+    width: 100%;
+}
+
+.linksBox {
+    width: 40%;
+}
+
+
+/*//////////////// WEATHER ///////////////////
+//////////// {min-width 1280px} /////////////*/
+
+.weatherGeneral {
+    position: relative;
+    bottom: 50px;
+    width: 25%;
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherGeneral img {
+    width: 150px;
+}
+
+.weatherDetails {
+    width: 100%;
+    padding: 50px 0px 0px 50px;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+
+#weatherLocation {
+    font-size: 1.5rem;
+    
+}
+
+#wheatherTemperature,
+#weatherDetailInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+#wheatherTemperature {
+    align-items: first baseline;
+}
+
+#weatherTempNumb {
+    font-size: 2rem;
+}
+
+#weatherTempRealNumb {
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+#wheatherTemperature p {
+    font-size: 0.8rem;
+}
+
+#weatherDetailInfo {
+    column-gap: 20px;
+}
+
+#windInfo,
+#cloudInfo,
+#humUVInfo {
+    font-size: 1rem;
+    padding-left: 10px;
+}
+
+
+/*//////////////// PASSWORD ///////////////////
+//////////// {min-width 1280px} /////////////*/
+
+.showPassword {
+    width: 90%;
+    height: 30px;}
+
+.passwordBox {
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.crear,
+.copiar {
+    font-size: 1rem;
+    width: 220px;
+    height: 30px;
+}
+
+
+/*//////////////// LINKS ///////////////////
+//////////// {min-width 1280px} /////////////*/
+
+.linksInputButtons {
+    width: 95%;
+    column-gap: 10px;
+    
+}
     }
+
+@media (min-width: 900px) and (max-width: 1279px) {
+
+/*//////////////// GENERAL ///////////////////
+///// {min width 900px - max-width 1280px} //////*/
+
+    .boxContainer {
+        width: 60vw;
+        height: 75vh;
+        flex-direction: row;
+        column-gap: 15px;
+    }
+
+    .weatherPasswordClockBox {
+        height: 100%;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    .weatherPasswordClockBox,
+    .linksBox {
+        min-width: 280px;
+    }
+
+    .boxContainer,
+    .weatherPasswordClockBox,
+    .passwordClockBox,
+    .weatherBox,
+    .weatherDetails,
+    .weatherForecast {
+        display: flex;
+    }
+
+/*//////////////// CLOCK ///////////////////
+///// {min width 900px - max-width 1280px} //////*/
+
+    .passwordClockBox {
+        height: 100%;
+        column-gap: 15px;
+    }
+
+    .fecha,
+    .frase {
+        color: var(--softOrange-color);
+        font-size: 1rem;
+    }
+
+    .clock {
+        color: var(--palePistaccio-color)
+    }
+
+    .iconoReloj {
+        display: initial;
+        margin-top: 20px;
+        font-size: 3rem;
+        text-align: center;
+        color: var(--palePistaccio-color);
+    }
+
+
+/*//////////////// WEATHER ///////////////////
+///// {min width 900px - max-width 1280px} //////*/
+
+    .weatherBox {
+        flex-direction: column;
+    }
+
+    .weatherGeneral {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .weatherGeneral img{
+        width: 100px;
+    }
+
+    .weatherDetails {
+        flex-direction: row;
+        padding-left: 30px;
+        row-gap: 10px;
+        font-size: 0.85rem;
+    }
+
+    #weatherLocation {
+        margin-left: -10px;
+        margin-right: 10px;
+    }
+    #wheatherTemperature {
+        width: 20%;
+    }
+
+    #weatherDetailInfo {
+        font-family: 'Roboto';
+        font-weight: 100;
+        font-size: 0.8rem;
+    }
+
+    .weatherForecast {
+        width: 40%;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+        justify-content: flex-start;
+        text-align: center;
+        position: relative;
+        top: -50px;
+        left: 20px;
+        
+    }
+
+    .weatherForecast img {
+        width: 40px;
+    }
+
+/*//////////////// PASSWORD ///////////////////
+///// {min width 900px - max-width 1280px} //////*/
+
+    .showPassword {
+        width: 80%;
+        height: 25px;
+    }
+
+    .passwordBox {
+        align-items: center;
+        flex-grow: 1;
+        padding: 40px 10px 0 10px;
+    }
+
+    .crear,
+    .copiar {
+    font-size: 0.8rem;
+    height: 40px;
+}
+
+/*//////////////// LINKS ///////////////////
+///// {min width 900px - max-width 1280px} //////*/
+
+.linksInputButtons{
+    flex-direction: column;
+    width: 100%;
+    row-gap: 5px;
+}
+}
+
 
 
 

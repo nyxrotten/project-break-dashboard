@@ -29,16 +29,16 @@ const getWeatherNow = async () => {
                                         <p>Feels Like</p>`
 
         const windInfo = document.querySelector('#windInfo')
-        windInfo.innerHTML = `<h4>Wind ${current.wind_kph} km/h</h4>
-                                <h4>Direction ${current.wind_dir}</h4>`
+        windInfo.innerHTML = `<p>Wind ${current.wind_kph} km/h</p>
+                                <p>Direction ${current.wind_dir}</p>`
         
         const cloudInfo = document.querySelector('#cloudInfo')
-        cloudInfo.innerHTML = `<h4>Clouds ${current.cloud}%</h4>
-                                <h4>Rain ${current.precip_mm}mm</h4>`
+        cloudInfo.innerHTML = `<p>Clouds ${current.cloud}%</p>
+                                <p>Rain ${current.precip_mm}mm</p>`
 
         const humUvInfo = document.querySelector('#humUvInfo')
-        humUvInfo.innerHTML = `<h4>UV ${current.uv}</h4>
-                                <h4>Humidity ${current.humidity}%</h4>`
+        humUvInfo.innerHTML = `<p>UV ${current.uv}</p>
+                                <p>Humidity ${current.humidity}%</p>`
 
     }
     catch (error) {
@@ -65,8 +65,8 @@ const getWeatherThisWeek = async () => {
             
             weatherForecast.appendChild(divDom);
             divDom.innerHTML = `<img src="${weekDay.day.condition.icon}">
-                                <h3>${weekDay.day.maxtemp_c}</h3>
-                                <h4>${weekDay.day.mintemp_c}</h4>
+                                <h3 id="weekDayMaxTemp">${weekDay.day.maxtemp_c}</h3>
+                                <h4 id="weekDayMinTemp">${weekDay.day.mintemp_c}</h4>
                                 <h5></h5>`
         })
     }
@@ -77,36 +77,36 @@ const getWeatherThisWeek = async () => {
 
 getWeatherThisWeek();
 
-const getWeatherHours = async () => {
-    try {
-        const response = await fetch (forecastBase+apiKey+ciudad+forecastHours);
-        if (!response.ok) {
-            throw new Error("Error de API", response.status);
-        } 
-        const data = await response.json();
-        const forecastDayHours = data.forecast.forecastday[0].hour
-        const hours = document.querySelector('.hours');
-        console.log(hours)
+// const getWeatherHours = async () => {
+//     try {
+//         const response = await fetch (forecastBase+apiKey+ciudad+forecastHours);
+//         if (!response.ok) {
+//             throw new Error("Error de API", response.status);
+//         } 
+//         const data = await response.json();
+//         const forecastDayHours = data.forecast.forecastday[0].hour
+//         const hours = document.querySelector('.hours');
+//         console.log(hours)
         
-        forecastDayHours.forEach((hour) => {
-            const liDom = document.createElement('li');
-            liDom.innerHTML = `
-                        <img src="${hour.condition.icon}">
-                        <p>${hour.condition.text}</p>
-                        <p>${hour.temp_c}</p>
-                        <p>${hour.wind_kph} ${hour.wind_dir}</p>`
-                        hours.appendChild(liDom);
+//         forecastDayHours.forEach((hour) => {
+//             const liDom = document.createElement('li');
+//             liDom.innerHTML = `
+//                         <img src="${hour.condition.icon}">
+//                         <p>${hour.condition.text}</p>
+//                         <p>${hour.temp_c}</p>
+//                         <p>${hour.wind_kph} ${hour.wind_dir}</p>`
+//                         hours.appendChild(liDom);
 
-        })
+//         })
 
         
-    }
-    catch (error) {
-        console.log('Error', error)
-    }
+//     }
+//     catch (error) {
+//         console.log('Error', error)
+//     }
 
-};
+// };
 
-getWeatherHours();
+// getWeatherHours();
 
 

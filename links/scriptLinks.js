@@ -6,34 +6,52 @@ const titleText = document.querySelector('.titleText')
 const urlText = document.querySelector('.urlText')
 
 
-add.addEventListener('click', (event) => {
-    // event.preventDefault();
-    console.log('holi')
+add.addEventListener('click', () => {
     const titleTextValue = titleText.value;
     const urlTextValue = urlText.value;
 
+    if (titleTextValue == "" || urlTextValue == "") {
+        alert('Introduce un título y una url')
+    }
+    else {
     const liDOM = document.createElement('li');
     liDOM.innerHTML = `
                     <li>
                     <div class="listaUlTexto">
-                        <p id="tituloUrl">${titleTextValue}</p>
-                        <a id="url" href="${urlTextValue}">${urlTextValue}<a>
-                    </div>
-                    <div class="listaUlCheckbox">
-                        <input id="listCheckbox" type="checkbox" class="checkbox">
+                        <p id=${titleTextValue}>${titleTextValue}</p>
+                        <a class="url" href="${urlTextValue}" target="_blank">${urlTextValue}<a>
+                        <button class="deleteSelf">X</button>
                     </div>
                     </li>`
     lista.appendChild(liDOM)
 
-    addLinkLocalStorage()
+    // const ultimoBoton = document.querySelectorAll('.deleteSelf') [document.querySelectorAll('.deleteSelf').length -1]
+    // ultimoBoton.addEventListener('click', (event) => {
+    //     const linksFiltrados = Array.from(document.querySelectorAll('.listaUl li'))
+    //     .filter((node) => {
+    //         console.log(node.childNodes[1].childNodes[1].id, event.target.id)
+    //         return node.childNodes[1].childNodes[1].id !== event.target.id})
+
+    //     .map((node) => {
+    //         return {
+    //             titulo:node.childNodes[1].childNodes[1].id,
+    //             URL:node.childNodes[0].childNodes[1]}
+    //     })
+
+    //     localStorage.setItem("Lista Links Guardados", JSON.stringify(linksFiltrados))
+        
+    // })
+
+    addLinkLocalStorage()}
 
 });
+
 
 pintarLinksGuardados()
 
 function pintarLinksGuardados () {
     const arrayLinksGuardados = localStorage.getItem("Lista Links Guardados") || []
-    console.log(arrayLinksGuardados)
+    
     if(arrayLinksGuardados === null) {
         const liDOM = document.createElement('li');
         liDOM.innerHTML = `<li>Aún no has guardado nada</li>`
@@ -45,9 +63,9 @@ function pintarLinksGuardados () {
         liDOM.innerHTML = `
             <li>
             <div class="listaUlTexto">
-                <p id="tituloUrl">${link.Título}</p>
-                <a id="url" href="${link.URL}" target="_blank">${link.URL}<a>
-                <input id="listCheckbox" type="checkbox" class="checkbox">
+                <p id="${link.titulo}">${link.titulo}</p>
+                <a class="url" href="${link.URL}" target="_blank">${link.URL}<a>
+                <button id="${link.titulo}" class="deleteSelf">X</button>
             </div>
             </li>`
         lista.appendChild(liDOM) 
@@ -58,12 +76,10 @@ function pintarLinksGuardados () {
 
 
 function addLinkLocalStorage() {
-
-
         const arrayLinksGuardados = JSON.parse(localStorage.getItem("Lista Links Guardados"))|| []
         const primerLinkGuardado = {}
 
-        primerLinkGuardado.Título = titleText.value;
+        primerLinkGuardado.titulo = titleText.value;
         primerLinkGuardado.URL = urlText.value;
 
         
@@ -75,7 +91,10 @@ function addLinkLocalStorage() {
         
     };
 
-    const inputCheckbox = document.querySelector("#listCheckbox");
+
+
+
+//BORRAR TODO LOCAL STORAGE
 
 
 borrar.addEventListener('click', () => {
@@ -87,19 +106,13 @@ borrar.addEventListener('click', () => {
 
 
 
+// const deleteSelf = document.querySelectorAll('liDom button')
 
+// deleteSelf.addEventListener('click', remove = () => {
+//     const borrar = document.getElementById(titleText);
+//     borrar.remove();
+// });
 
+// console.log(deleteSelf)
 
-
-
-
-//URL.canParse(link.value)
-
-/* try { 
-                new URL(link.value);
-            } catch (error) {
-                linkWarning.textContent = 'Not a valid link.'
-                return false;
-            }
-*/
 
