@@ -311,7 +311,7 @@ nav li a:hover {
     color: var(--seaBlue-color);
 }
 
-.deleteSelf:hover { 
+.deleteSelf:hover {
     font-weight: 900;
     border: 1px solid var(--softOrange-color);
     background-color: var(--softOrange-color);
